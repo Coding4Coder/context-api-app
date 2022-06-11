@@ -1,6 +1,6 @@
 import React from 'react';
 import { Content } from './Styles/Style';
-import { FirstName, LastName } from '../App';
+import { FirstName, LastName } from './ContextApi';
 
 const HomeD = () => {
   return (
@@ -10,14 +10,15 @@ const HomeD = () => {
          {(fname) => {
            return (
              <LastName.Consumer>
-               {(lname) => {
-                 return(
-                  <h1>Customer name is { fname } { lname }</h1>
-                 )
-               }}
+               {
+                 (lname)=>{
+                   return (
+                      <h1>Customer name is { fname } { lname }</h1>
+                   )
+                 }
+               }
              </LastName.Consumer>
            )
-           
            }
          }
         </FirstName.Consumer>
