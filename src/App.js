@@ -5,6 +5,7 @@ import HomeA from './Components/HomeA';
 import { TopHeader, Logo, TopNavBar, MainContainer } from "./Components/Styles/Style";
 
 const FirstName = createContext();
+const LastName = createContext();
 
 function App() {
   return (
@@ -15,8 +16,10 @@ function App() {
      </TopHeader>
 
      <MainContainer>
-       <FirstName.Provider value={"Kabir"}>
-         <HomeA />
+       <FirstName.Provider value={"Munna"}>
+         <LastName.Provider value={"Bhai MBBS"}>
+          <HomeA />
+         </LastName.Provider>
        </FirstName.Provider>
      </MainContainer>
     </>
@@ -24,4 +27,4 @@ function App() {
 }
 
 export default App;
-export { FirstName };
+export { FirstName, LastName };

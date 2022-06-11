@@ -1,6 +1,6 @@
 import React from 'react';
 import { Content } from './Styles/Style';
-import { FirstName } from '../App';
+import { FirstName, LastName } from '../App';
 
 const HomeD = () => {
   return (
@@ -8,7 +8,16 @@ const HomeD = () => {
       <Content>
         <FirstName.Consumer>
          {(fname) => {
-           return <h1>Customer name is { fname }</h1>
+           return (
+             <LastName.Consumer>
+               {(lname) => {
+                 return(
+                  <h1>Customer name is { fname } { lname }</h1>
+                 )
+               }}
+             </LastName.Consumer>
+           )
+           
            }
          }
         </FirstName.Consumer>
